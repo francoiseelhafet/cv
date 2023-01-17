@@ -181,12 +181,14 @@ body
 .head
 {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
     background-color: rosybrown;
     height: auto;
     animation: headcolor 60s linear infinite;
-} 
+    padding-left: 70px;
+}
+
 /* changement header au clic */
 .head:active{
 
@@ -242,6 +244,7 @@ body
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-right: 20px;
 
 }
 /* titre */
@@ -408,14 +411,21 @@ scale: 1.1;
        
         scale: 0;
     }
+    25%{
+        scale: 1.4;
+    }
     50%{
-        scale: 1.2;
+        scale: 1.4;
     }
     75%{
-        scale: 1.2;
+        scale: 1.4;
+    }
+    90%{
+        scale: 1.4;
+        color:#A2FAB6;
     }
     100%{
-        
+        color: black;
         scale: 0;
     }
 }
@@ -522,8 +532,9 @@ a:hover{
     justify-content: center;
     align-items: center;
     box-shadow: 0px 0px 0px 0 #5c5252;
-    background-color: #69f8a9;
+    _background-color: #69f8a9;
     margin: 0 20px 0 20px;  
+    background-color: black;
 }
 
 /* i */
@@ -736,7 +747,8 @@ i{
 /* animation au survol */
 .skills__hards__box__listing-listing-1:hover{
     border: 5px black solid;
-    background-color: #69f8a9;
+    background-color: #579b9b;
+    width: 50%;
 }
 /* -------------------------------------------------footer---------------------------------- */
 footer{
@@ -832,6 +844,7 @@ footer{
     align-content: center;
     font-weight: bold;
     font-size: 1.1em;
+    padding-right: 20px;
     
     }
 
@@ -842,6 +855,7 @@ footer{
     align-items: center;
     font-weight: bold;
     font-size: 1.1em;
+    padding-right: 20px;
     }
 
 /*-----------------------------------------------------page 2------------------------------------*/

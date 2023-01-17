@@ -1,0 +1,205 @@
+/*-------page 1------------*/
+    /*
+    .accueil{
+        height: 100%;
+        width: 100;
+        _background: url();
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .accueil h1{
+        font-size: 120px;
+        margin-bottom:450px;
+    }
+    
+        /*-------loader------------*/
+   /* _.loader {
+        position: absolute;
+        width:100%;
+        height:100%;
+        background:#000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    _.lettre{
+        color: #484848;
+        font-size: 80px;
+        letter-spacing: 15px;
+        margin-bottom: 150px;
+        animation: flash 1.2s linear infinite;
+    }
+@keyframes flash{
+    0%{
+        color:#fff900;
+        text-shadow: 0 0 7px #fff900;
+        text-shadow: 0 0 7px #fff900;
+    }
+    90% {
+        color:#484848;
+        text-shadow: none;
+
+    }
+    100%{
+        color:#fff900;
+        text-shadow: 0 0 7px #fff900;
+        text-shadow: 0 0 7px #fff900;
+    }
+}*/
+/*essaie*/
+
+/*
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+}
+body {
+    font-family: Montserrat, Helvetica, sans-serif;
+    background: url("bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 100px 20px 0;
+}
+p {
+    text-transform: uppercase;
+    color: #222;
+    font-weight: 900;
+    color: transparent;
+    font-size: 0px;
+}
+p span {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    font-size: clamp(20px, 8vw, 120px);
+}
+p span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+}
+p:nth-child(1) {
+    font-weight: 300;
+    animation: txt-appearance 0s 1s forwards;
+}
+p:nth-child(2) {
+    animation: txt-appearance 0s 1.25s forwards;
+}
+p:nth-child(1) span::after {
+    background: salmon;
+    animation: slide-in 0.75s ease-out forwards,
+    slide-out 0.75s 1s ease-out forwards;
+}
+p:nth-child(2) span::after {
+    background: royalblue;
+    animation: slide-in 0.75s 0.3s ease-out forwards,
+    slide-out 0.75s 1.3s ease-out forwards;
+}
+@keyframes slide-in {
+    100% {
+        transform: translateX(0%);
+    }
+}
+@keyframes slide-out {
+    100% {
+        transform: translateX(100%)
+    }
+}
+@keyframes txt-appearance {
+    100% {
+        color: #222;
+    }
+}
+
+
+
+essaie loader
+
+.accueil{
+
+
+       /*-------loader p1html------------*/
+       /*  */
+       /*  */
+       _::before, ::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    _body.essaie {
+        font-family: Montserrat, Helvetica, sans-serif;
+        height: 100%;
+    }
+/* code apparition de texte ne fontionne pas  */
+    .head__titles__item
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    position: relative;
+    /* text-transform: uppercase; */
+    color: #222;
+    /* color: transparent; */
+    font-size: 0px;
+}
+.b{
+    display: inline-block;
+    position: relative;
+    _overflow: hidden;
+    font-size: clamp(20px,8vw,20px);
+    animation: txt-appearance 0s 1s forwards ;
+    
+}
+.b::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    transform: translateX(-100%);
+    background-color: rosybrown;
+    animation: slide-in 0.75s ease-out forwards;
+    animation: slide-out 0.75s 1s ease-out forwards;
+}
+@keyframes slide-in{
+100%{
+    transform:translateX(0%)
+}
+}
+
+@keyframes slide-out{
+    100%{
+        transform:translateX(100%)
+    }
+
+}
+@keyframes text-appearance{
+100%{
+    color:#222;
+}
+}
+
