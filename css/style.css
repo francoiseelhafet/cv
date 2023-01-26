@@ -1,5 +1,5 @@
 
-/*------corp de page-----*/
+/*------corp-de-page-------------------------------------corp-de-page----------corp-de-page-*/
 *{
     box-sizing: border-box;
 }
@@ -15,10 +15,9 @@ body
     background-color: antiquewhite;
     border: black 3px solid;
     font-weight: bold;
-    animation: apparition 10s ease-out;  
-
+    animation: apparition 10s ease-out;        
 } 
-/* effet apparition */
+/* effet apparition de la page d'accueil */
 @keyframes apparition{
     from{
         opacity:0;
@@ -29,38 +28,38 @@ body
         transform:translateY(0px);
     }
 }
-/* bloc page de chargement bonjour et spinner */
-.loader2{
-   
+/*  bonjour et spinner */
+.welcome{
     background-color: #ffffff;
     height:100vh;        /*-------toute la taille de l'ecran------------*/
   
     position: fixed;        /*-------ne bouge plus------------*/
       
+    inset: 0;        /*-------remplace top/right/bottom/left------------*/
+  
+    z-index: 1;        /*-------position/superposition------------*/
+  
+    opacity: 0.9;        /*-------transparance------------*/
+  
+    animation:disappear 7s forwards 2s;        /*-------durée d'apparition------------*/
       
-  
-      inset: 0;        /*-------remplace top/right/bottom/left------------*/
-  
-      z-index: 1;        /*-------position/superposition------------*/
-  
-      opacity: 0.9;        /*-------transparance------------*/
-  
-      animation:disappear 7s forwards 2s;        /*-------durée d'apparition------------*/
-      
-      transform-origin: top; /*-------disparition vers le haut------------*/
-  
-  
-      
+    transform-origin: top; /*-------disparition vers le haut------------*/  
   }
+  @keyframes disappear{
+    0%{
+        transform: scale(1);/*-------commence------------*/
+    }
+    100%{
+        transform: scale(0);/*-------termine------------*/
+    }
+}
   /*  */
-  ::after{
+::after{
       content: " ";
       
   }
-
   /* conteneur lettre bonjour */
- 
-   .loader4{
+.welcome__box{
     position :fixed;
     width: 100%;
     height: auto;
@@ -69,19 +68,17 @@ body
     margin-top: 100px; 
    }
    /* lettre bonjour */
-   .lettre{
+.lettre{
     color:#484848;
     font-size:80px;
     letter-spacing: 10px;  /*-------espace entre les lettre------------*/
     animation: flash 1.2s linear infinite; /*-------flash 1,2seconde linear infinit------------*/
-    position: relative;
-    _inset: 100px 100px 100px 160px;
+    position: relative;  
     z-index: 4  ;
     font-weight: bold;
     color: rosybrown;
-    _padding-left: 15px;  
 }
-/* couleurs et ombre des lettres */
+/* animation couleurs et ombre des lettres */
 @keyframes flash{
     0%{
         color: rosybrown;
@@ -93,41 +90,40 @@ body
     }
     /* delai effet des lettres */
 }
-/* effet des lettres */
+/* effet décalé des lettres */
 .lettre:nth-child(1){ /*------1er enfant de lettre------------*/
- animation-delay: 0.1s;/*-------delai 1seconde ------------*/
+    animation-delay: 0.1s;/*-------delai 1seconde ------------*/
 }
-
 .lettre:nth-child(2){ 
     animation-delay: 0.2s;
    }
-   .lettre:nth-child(3){ 
+.lettre:nth-child(3){ 
     animation-delay: 0.3s;
    }
-   .lettre:nth-child(4){ 
+.lettre:nth-child(4){ 
     animation-delay: 0.4s;
    }
-   .lettre:nth-child(5){ 
+.lettre:nth-child(5){ 
     animation-delay: 0.5s;
    }
-   .lettre:nth-child(6){ 
+.lettre:nth-child(6){ 
     animation-delay: 0.6s;
    }
-   .lettre:nth-child(7){ 
+.lettre:nth-child(7){ 
     animation-delay: 0.7s;
    }
-   .lettre:nth-child(8){ 
+.lettre:nth-child(8){ 
     animation-delay: 0.8s;
    }
-   .lettre:nth-child(9){ 
+.lettre:nth-child(9){ 
     animation-delay: 0.9s;
    }
-   .lettre:nth-child(10){ 
+.lettre:nth-child(10){ 
     animation-delay: 10s;
    }
 
    /* spinner */
-   .loader{
+.welcome__loader{
     margin: auto;
     border: 16px solid #bdc3c7;
     width:120px;
@@ -135,7 +131,7 @@ body
     border-top-color: #1abc9c;
     border-bottom-color:#3498bd;
     border-radius: 50%;
-    animation: chargeur 6s linear infinite;       /*-------combinaison animation linear durée------------*/
+    animation: spinner 6s linear infinite;       /*-------combinaison animation linear durée------------*/
     position: fixed;
     inset:0;
     display: grid;
@@ -143,41 +139,32 @@ body
     z-index: 2;
 }
 /* couleur et option de rotation */
-@keyframes chargeur {
+@keyframes spinner {
     0%{
         transform: rotate(0deg) scale(1);       /*-------rotation echelle 1------------*/
-
         border-top-color:rgb(175, 66, 157);
         border-bottom-color:rgb(175, 66, 157)ed;
     }
     25%{
         border-top-color:rgb(89, 177, 228);       /*-------changement de couleur------------*/
-
         border-bottom-color:rgb(89, 177, 228);
     }
     50%{
         transform: rotate(360deg) scale(1.15);       /*-------1 tour et echelle 15%------------*/
-
         border-top-color:rgb(175, 66, 157);
         border-bottom-color:rgb(175, 66, 157);
     }
     75%{
         border-top-color:green;
         border-bottom-color:green;       /*-------changement de couleur------------*/
-
     }
     100%{
         transform: rotate(720deg) scale(1);       /*-------2 tour echelle 1------------*/
-
         border-top-color:red;
         border-bottom-color:red;
     }
-    
-    
-
 }
-
-/*-----------------------header/entête-------------------------------*/
+/*-----------------------header/entête-----------------header/entête---------------header/entête-------------*/
 .head
 {
     display: flex;
@@ -188,21 +175,13 @@ body
     animation: headcolor 60s linear infinite;
     padding-left: 70px;
 }
-
 /* changement header au clic */
 .head:active{
-
-
-        _transform: scale(1.13);
         background-color: rgb(26, 198, 201);
         transition-delay: 0, 150ms;
-        _transition: transform 1000ms ease-in;
         transition: transform linear;
-        _transition: transform 1000ms ease-out;
-        
-    
 }
-    /*animation changement de couleur */
+    /*animation changement de couleur auto */
 @keyframes headcolor{
     0%{
         background-color: rosybrown;
@@ -218,20 +197,19 @@ body
         background-color: rgb(26, 198, 201);
     }
 }
-
-/*-------box photo----------*/
+/*-------box photo entete----------*/
 /* changement opacité photo au survol */
 .head__img:hover{
     opacity: 0.5;
 }
-/* photo */
+/* photo entete */
 .head__img__png
 {
-    width: 130px;
-    height: 160px;
-    object-fit: cover;
+    width: 150px;
+    height: 150px;
+    object-fit: fill;
     object-position: bottom;
-    margin-top: 2px;
+    margin-top: 11px;
     margin-bottom: 2px;
     padding-left: 0%;
     border: black 2px solid;
@@ -239,15 +217,14 @@ body
     border-radius: 50%;
 }
 
-/*-------box titre----------*/
+/*-------box titre nom----------*/
 .head__titles{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-right: 20px;
-
 }
-/* titre */
+/* titre head nom */
 h1
 {
     display: flex;
@@ -255,7 +232,7 @@ h1
     font-weight: bold;
     font-size: 2.5em;
 }
-/* texte header */
+/* texte header titre */
 .head__titles__item 
 {
     display: flex;
@@ -263,137 +240,135 @@ h1
     align-items: center;
     font-size: 1.5em;
     font-weight: bold;
-    animation: flash3 5s linear infinite; /*-------flash 1,2seconde linear infinit------------*/
-
+    animation: letter 5s linear infinite; /*-------flash 1,2seconde linear infinit------------*/
 }
-.b{
-    animation: flash3 60s linear infinite; /*-------flash 1,2seconde linear infinit------------*/ 
+/* lettre du titre */
+.head__title__item-letter{
+    animation: letter 60s linear infinite; /*-------flash 1,2seconde linear infinit------------*/ 
 }
-@keyframes flash3{
+@keyframes letter{
     0%{
         color: #484848;
         text-shadow: 0 0 7px white;
-        _scale: 1;
+        
     }
     50%{
-        _scale: 1.2;
+        
     }
     100%{
         color:#484848;
         text-shadow: none;
-        _scale: 1;
+        
     }
     /* delai effet des lettres */
 }
 /* a */
-.b:nth-child(1) {
+.head__title__item-letter:nth-child(1) {
 animation-delay: 1s;
 scale: 1.1;
 }
 /* p */
-.b:nth-child(2) {
+.head__title__item-letter:nth-child(2) {
     animation-delay: 2s;
     scale: 1.1;
 }
 /* p */
-.b:nth-child(3) {
+.head__title__item-letter:nth-child(3) {
     animation-delay: 3s;
     scale: 1.1;
 }
 /* r */
-.b:nth-child(4) {
+.head__title__item-letter:nth-child(4) {
 animation-delay: 4s;
 scale: 1.1;
 
 }
 /* e */
-.b:nth-child(5) {
+.head__title__item-letter:nth-child(5) {
     animation-delay: 5s;
     scale: 1.1;
 }
 /* n */
-.b:nth-child(6) {
+.head__title__item-letter:nth-child(6) {
     animation-delay: 6s;
     scale: 1.1;
 }
 /* t */
-.b:nth-child(7) {
+.head__title__item-letter:nth-child(7) {
     animation-delay: 7s;
     scale: 1.1;
 }
 /* i */
-.b:nth-child(8) {
+.head__title__item-letter:nth-child(8) {
 animation-delay: 8s;
 scale: 1.1;
 }
 /* s */
-.b:nth-child(9) {
+.head__title__item-letter:nth-child(9) {
 animation-delay: 9s;
 scale: 1.1;
 }
 
 /* d */
-.b:nth-child(10) {
+.head__title__item-letter:nth-child(10) {
     animation-delay: 11s;
     }
     /* é */
-    .b:nth-child(11) {
-        animation-delay: 12s;
-    }
-    /* v */
-    .b:nth-child(12) {
-        animation-delay: 13s;
-    }
-    /* e */
-    .b:nth-child(13) {
-    animation-delay: 14s;
-    }
-    /* l */
-    .b:nth-child(14) {
-        animation-delay: 15s;
-    }
-    /* o */
-    .b:nth-child(15) {
-        animation-delay: 16s;
-    }
-    /* p */
-    .b:nth-child(16) {
-        animation-delay: 17s;
-    }
-    /* p */
-    .b:nth-child(17) {
-    animation-delay: 18s;
-    }
-    /* e */
-    .b:nth-child(18) {
-    animation-delay: 19s;
-    }
-    /* u */
-    .b:nth-child(19) {
-    animation-delay: 20s;
-    }
-    /* s */
-    .b:nth-child(20) {
-        animation-delay: 21s;
-    }
-    /* e */
-    .b:nth-child(21) {
-        animation-delay: 22s;
-    }
-    /* w */
-    .b:nth-child(22) {
-        animation-delay: 23s;
-    }
-    /* e */
-    .b:nth-child(23) {
-    animation-delay: 24s;
-    }
-    /* b */
-    .b:nth-child(24) {
-    animation-delay: 25s;
-    }
-
-
+.head__title__item-letter:nth-child(11) {
+    animation-delay: 12s;
+}
+/* v */
+.head__title__item-letter:nth-child(12) {
+    animation-delay: 13s;
+}
+/* e */
+.head__title__item-letter:nth-child(13) {
+animation-delay: 14s;
+}
+/* l */
+.head__title__item-letter:nth-child(14) {
+    animation-delay: 15s;
+}
+/* o */
+.head__title__item-letter:nth-child(15) {
+    animation-delay: 16s;
+}
+/* p */
+.head__title__item-letter:nth-child(16) {
+    animation-delay: 17s;
+}
+/* p */
+.head__title__item-letter:nth-child(17) {
+animation-delay: 18s;
+}
+/* e */
+.head__title__item-letter:nth-child(18) {
+animation-delay: 19s;
+}
+/* u */
+.head__title__item-letter:nth-child(19) {
+animation-delay: 20s;
+}
+/* s */
+.head__title__item-letter:nth-child(20) {
+    animation-delay: 21s;
+}
+/* e */
+.head__title__item-letter:nth-child(21) {
+    animation-delay: 22s;
+}
+/* w */
+.head__title__item-letter:nth-child(22) {
+    animation-delay: 23s;
+}
+/* e */
+.head__title__item-letter:nth-child(23) {
+animation-delay: 24s;
+}
+/* b */
+.head__title__item-letter:nth-child(24) {
+animation-delay: 25s;
+}
 
 /*------box lien------*/
 .head__nav{
@@ -404,29 +379,37 @@ scale: 1.1;
     padding-right: 5%;
 }
 .head__nav__item{
-    animation: flash7 5s linear infinite;
+    animation: arrow 5s linear infinite;
 }
-@keyframes flash7 {
+@keyframes arrow {
     0%{
        
         scale: 0;
     }
     25%{
+        color: black;
         scale: 1.4;
     }
     50%{
         scale: 1.4;
     }
+    60%{
+        scale: 2.5;
+    }
     75%{
-        scale: 1.4;
+        scale: 2.5;
     }
     90%{
-        scale: 1.4;
+        scale: 2.5;
+        color:#A2FAB6;
+    }
+    95%{
+        scale: 3;
         color:#A2FAB6;
     }
     100%{
-        color: black;
-        scale: 0;
+        color: #A2FAB6;
+        scale: 3;
     }
 }
 /*------lien------*/
@@ -434,21 +417,17 @@ a{
     text-decoration: none;
     color: black;
 }
-
 /*  */
 a:hover{
     color:purple;
     text-decoration: underline;
     
 }
-
-
-/*---------------------------------main----------------------------*/
-/*  grand conteneur/ compétence et expérience */
+/*---------------------------------main---------------------main------------------main------------------*/
+/*  ------grand conteneur/ compétence et expérience */
 .skills{
     display:flex;
 }
-
 /*------section soft------*/
 /* box compétence */
 .skills__soft{
@@ -457,11 +436,11 @@ a:hover{
     animation: color 60s linear infinite;
 }
 /*  animation changement au survol de couleur  */
-.skills__soft:focus{
+_.skills__soft:focus{
     transform: scale(1.1);
     background-color: #f7e2c9;
 }
-/* animation changement de couleur */
+/* animation changement de couleur de la section */
 @keyframes color{
     0%{
        background-color: #f3d3ad ;
@@ -479,9 +458,7 @@ a:hover{
          
      }
 }
-
-
-/* box titre et i */
+/* box titre  a propos de moi */
 .skills__soft__box-title{
     background-color: #afbcac;
     display: flex;
@@ -491,20 +468,19 @@ a:hover{
     border: black 2px solid;
     box-shadow: 10px 5px 5px #5c5252;
     transition: all 450ms;
-    animation: change2 60s linear infinite;
+    animation: change 60s linear infinite;
     padding-right: 20px;
 }
-
-/* animation de box */
+/* changement de couleur au survol */
 .skills__soft__box-title:hover{
-    _transform: scale(1.13);
+    
     background-color: rosybrown;
     transition-delay: 0, 150ms;
-    _transition: transform 1000ms ease-in;
-    transition: transform linear;
-    _transition: transform 1000ms ease-out;   
+
+    transition: transform linear; 
 }
-@keyframes change2{
+/*animation changement de couleur minute */
+@keyframes change{
     0% { background-color: #afbcac;
 }
 
@@ -519,7 +495,7 @@ a:hover{
         background-color: rosybrown;
     }
 }
-/* box i */
+/* box clé qui tourne */
 .skills__soft__box-title__box{
     font-size: 1.5em;
     font-weight: bold;
@@ -531,21 +507,81 @@ a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 0px 0px 0 #5c5252;
-    _background-color: #69f8a9;
+    box-shadow: 0px 0px 0px 0 #5c5252; 
     margin: 0 20px 0 20px;  
     background-color: black;
+    animation: flash7 5s linear infinite;  
 }
-
-/* i */
+/* i  clé*/
 .skills__soft__box-title__box__item{
     font-weight: bold;
     font-size: 1.5em;
 }
-/* i animation au survol */
+/* i animation  clé au survol */
 .skills__soft__box-title__box__item:hover{
     transform: scale(1.5);
     background-color: #f7e2c9;
+}
+.keys__box{
+    background-color: black;
+}
+.keys{
+    color: #DCB420;
+}
+.soft__anim{
+    height: 75px;
+    font-size: 1.7em;
+    font-weight: bold;
+}
+.lettre1{
+    color:#484848;
+    animation: flash1 5s linear infinite; /*-------flash 1,2seconde linear infinit------------*/
+    position: relative;
+    
+    
+    font-weight: bold;
+    color: black;
+    
+}
+@keyframes flash1{
+    0%{
+        
+        text-shadow: 0 0 7px wheat;
+    }
+    90%{
+        color:black;
+        text-shadow: none;
+    }
+}
+.lettre1:nth-child(1){ /*------1er enfant de lettre------------*/
+animation-delay: 0.1s;/*-------delai 1seconde ------------*/
+} 
+.lettre1:nth-child(2){ 
+    animation-delay: 0.2s;
+}
+.lettre1:nth-child(3){ 
+    animation-delay: 0.3s;
+}
+.lettre1:nth-child(4){ 
+    animation-delay: 0.4s;
+}
+.lettre1:nth-child(5){ 
+    animation-delay: 0.5s;
+}
+.lettre1:nth-child(6){ 
+    animation-delay: 0.6s;
+}
+.lettre1:nth-child(7){ 
+    animation-delay: 0.7s;
+}
+.lettre1:nth-child(8){ 
+    animation-delay: 0.8s;
+}
+.lettre1:nth-child(9){ 
+    animation-delay: 0.9s;
+}
+.lettre1:nth-child(10){ 
+    animation-delay: 10s;
 }
 /*  soft texte */
 .skills__soft__title__item{
@@ -607,7 +643,7 @@ a:hover{
 .skills__soft__title__item-box__box-item2{
     padding-left: 5%;
 }
-/*----------------------------------section hards---------------------*/
+/*----------------------------------section-hards--------------section-hards-------------------section-hards------*/
 /* box expèriences */
 .skills__hards{
     display: flex;
@@ -616,15 +652,15 @@ a:hover{
     width: 50%;
     background-color: antiquewhite;
     border: black 2px solid;
-    animation: change 60s linear infinite;
+    animation: color1 60s linear infinite;
 }
 /* animation avec la souris */
 .skills__hards:focus{
     transform: scale(1.1);
     background-color: #f7e2c9;
 }
-/* animation changement de couleur */
-@keyframes change{
+/* animation inversement de couleur de la section */
+@keyframes color1{
    
    
     0%{
@@ -682,12 +718,11 @@ a:hover{
 /*  animation au survol*/
 .skills__hards__box__title-box:hover{
 
-    _transform: scale(1.13);
     background-color: rosybrown;
     transition-delay: 0, 150ms;
-    _transition: transform 1000ms ease-in;
+   
     transition: transform linear;
-    _transition: transform 1000ms ease-out;
+   
     
 }
 @keyframes change1{
@@ -716,7 +751,7 @@ i{
 }
 /* liste boutique */
 .skills__hards__box__listing-listing{
-    _background-color: bisque;
+    
     background-color: #efffc4;
     margin: 0;
     border: black 2px solid;
@@ -744,14 +779,33 @@ i{
         background-color:  #efffc4;
     }
 }
+/* liste de tache */
+.skills__hards__box__listing-listing-1{
+    width: 50%;
+}
 /* animation au survol */
 .skills__hards__box__listing-listing-1:hover{
     border: 5px black solid;
     background-color: #579b9b;
-    width: 50%;
 }
-/* -------------------------------------------------footer---------------------------------- */
-footer{
+/* liste de tâche vendeuse */
+.skills__hards__box__listing-listing-2{
+    width: 50%;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+/* animation de la liste*/
+.skills__hards__box__listing-listing-2:hover{
+    border: 5px black solid;
+    background-color: #579b9b;
+    scale: 1.2;
+    z-index: 3;
+    margin-right: 25px;
+    width: 40%;
+    
+}
+/* -------------FOOTER-----------------FOOTER-------------------FOOTER-------------------footer---------------------------------- */
+.one{
     background-color:#FADEC8;
     animation: change6 60s linear infinite; 
 }
@@ -772,11 +826,9 @@ footer{
     
 
 }
+/* titre footer */
 
-
-/* titre */
-
-.foot-title
+.foot__title
     {
     display: flex;
     justify-content: center;
@@ -791,7 +843,7 @@ footer{
     animation: change4 60s linear infinite;    
     
     }
-    @keyframes change4{
+@keyframes change4{
         0%{
             background-color: rosybrown;
         }
@@ -806,39 +858,37 @@ footer{
             background-color: rgb(26, 198, 201);
         }
     }
-
-
-/* box titre et année */
-    .foot--items{
+/*grande box titre et année */
+.foot__title__items{
         padding-left: 20%;
         font-size: 1em;
         width: 80%;
         }
-        /* année */
-        .foot--items:hover{
+        /* animation grande  box titre et année */
+.foot__title__items:hover{
             transform: scale(1.1);
             background-color: rgb(0, 255, 221);
             width: 80%;
             border: 5px solid black;
         }
-        /*  animation au survol*/
-        .foot-items{
+        /* box titre et année*/
+.foot__title__items-box{
         display: flex;
         align-items: center;
         font-weight: bold;
         font-size: 1.1em;
     
         }
-        /* box titre et année */
-        .foot-items1{
+        /* box titre et année 2*/
+.foot__title__items-box-items1{
             display: flex;
             align-items: center;
             font-weight: bold;
             font-size: 1.1em;
         
             }
-    /* année */
-    .foot-item{
+    /* élément dans box titre et année */
+.foot__title__items-box-item{
     display: flex;
     justify-content: center;
     align-content: center;
@@ -848,8 +898,8 @@ footer{
     
     }
 
-    /*année  */
-    .foot-item1{
+    /*élément dans box titre et année 2  */
+.foot__title__items-box-item1{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -857,86 +907,56 @@ footer{
     font-size: 1.1em;
     padding-right: 20px;
     }
-
-/*-----------------------------------------------------page 2------------------------------------*/
-_.head
-{
+/*------------PAGE-2---------------------PAGE-2--------------------PAGE-2--------------------PAGE-2----------------*/
+/*  apparition de la page */
+.accueil{
+    animation:disappear 10s forwards 4s; 
+    transform-origin: center; 
+}
+/* conteneur titre et photo */
+.accueil__box{
+    position :fixed;
+    width: 100%;
+    height: auto;
     display: flex;
     justify-content: center;
-    font-size: 2em;
+    _margin-top: 100px; 
+}
+/*  titre du conteneur  */
+.accueil__title{
+    font-size:50px;
+    inset: 15%;
+    /*-------espace entre les lettre------------*/
+    position: relative;  
+    z-index: 4  ;
     font-weight: bold;
+    color: black;
+    animation:disappear 5s forwards 4s; 
+      
 }
-/*  */
-_.info
-{
-    display:flex;
-    flex-direction: column;
-}
-/*  */
-_.info-item{
-    background-color: burlywood;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 69px;
-}
-    /*  */
-_.f-info-item
-{
-    justify-content: center;
-    font-size: 18px;
-    margin-top: 35px;
-    border: 5px black solid;
-    border-radius: 5em;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    padding: 3px;
-    margin-right: 20px;
+/* image */
+.accueil__img{
+    height:100vh;        /*-------toute la taille de l'ecran------------*/
   
-}   
-/*  */
-_.main-head
-{
-    display: flex;
-    justify-content: center;
-    padding-top:15px;
-    margin-left: 2%;
-    
+    position: fixed;        /*-------ne bouge plus------------*/
+      
+    inset: 0;        /*-------remplace top/right/bottom/left------------*/
+  
+    z-index: 3;        /*-------position/superposition------------*/
+  
+    opacity: 0.9;        /*-------transparance------------*/
+  
+    animation:disappear 35s forwards 4s;        /*-------durée d'apparition------------*/
+      
+    transform-origin: bottom; /*-------disparition vers le haut------------*/
+      
 }
-/*  */
-
-_.comp--items{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: burlywood;
-    height: 50px;
-}
-a{
+/*  nav */
+.head-nav-link{
     padding-left: 5%;
+    animation: arrow 5s linear infinite;
 }
-/*  */
-_.cont-item{
-    padding-left: 5%;
-}
-/*-------section 2 hard skills-----------*/
-/*  */
-
-_.hards--item{
-    display:flex;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 1.5em;
-
-}
-
-
-
-/*-------section footer------------*/
-
-
+/* body */
 .p2{
     padding: 40px;
     font-weight: 400 ;
@@ -949,25 +969,17 @@ _.hards--item{
     font-family: 'Shrikhand', cursive;
         
 }
-/*  */
 
-
-/*  */
-.accueil{
-    color:rgb(226, 107, 173)
-
-}
-/*  */
-.head-boxp2{
+/* header */
+.head-box{
     height: 500px;
     display: flex;
-    _justify-content: space-between;
+    margin-bottom: 70px;
     align-items: center;
 }
-/*  */
-.left-box
+/* box nav */
+.head-left-box
 {
-    _padding-left: 30px;
     font-size: 2em;
     display: flex;
     align-items: flex-start;
@@ -975,212 +987,68 @@ _.hards--item{
     width: 60px;
     position: absolute;
 }
-/*  */
-.head--bigboxp2{
+/*  grand conteneur*/
+.head-big-box{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
-/*  */
-.head-box-imgp2{
+/* box photo */
+.head-box-img{
     width: 250px;
     height: 270px;
-    border: 2px solid black;
-    border-radius: 50%;
-    _margin-left: 100px;
     margin-right: 40px;
     display: flex;
     justify-content: center;
     align-items: center;    
-    _left: 100px;
-    _position: relative;
     margin-top: 100px;
 }
-/*  */
-.head-imgp2{
-    object-fit: cover;
+/* photo */
+.head-img{
     object-position: bottom;
-    width: 250px;
-    height: 270px;
+    width: 210px;
+    height: 210px;
     border: 2px solid black;
     border-radius: 50%;
+    object-fit: fill;
 }
-/*  */
-_.hard--titlep2
-{
-    display: flex;
-    justify-content: flex-start;
-    width: 150px;
-    margin:0;
-    margin-bottom: 30px;
 
-}
-/*  */
-
-       /*-------loader p1html------------*/
-.loader1{
-    
-    background-color: rgb(164, 163, 172); 
-
-    height:100vh;        /*-------toute la taille de l'ecran------------*/
-
-    position: fixed;        /*-------ne bouge plus------------*/
-    
-    
-
-    inset: 0;        /*-------remplace top/right/bottom/left------------*/
-
-    z-index: 1;        /*-------position/superposition------------*/
-
-    opacity: 0.9;        /*-------transparance------------*/
-
-    animation:disappear 1s forwards 2s;        /*-------durée d'apparition------------*/
-    
-    transform-origin: top; /*-------disparition vers le haut------------*/
-
-    _animation-fill-mode: forwards;        /*-------position de la fin d'animation (disparition)------------*/
-
-    _animation-delay: 2s;        /*-------délai d'apparition------------*/
-    
-} 
-
-/*  */
-::after{
-    content:"";
-    
-}
-/*  */
-@keyframes disappear{
-    0%{
-        transform: scale(1);/*-------commence------------*/
-
-    }
-    100%{
-        transform: scale(0);/*-------termine------------*/
-
-    }
-
-}
-       /*-------------------*/
-/*  */
-.loader-title{
-    position: absolute;
-    
-    z-index: 3;
-    font-weight: bold;
-    color: rosybrown;
-}
-/*  */
-.box-info
+/* grand conteneur avec contact */
+.head-big-box-info
 {
     display: flex;
     flex-direction: column;
-    margin-top: 250px;
-    width: 45%;
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 40%
 }
-/*  */
-.box--info{
+/* petit conteneur icone et contact */
+.head-box-info{
     display: flex;
     align-items: center;
 }
-/*  */
-.box--info-item{
+/* icone */
+.head-box-info-item{
     margin: 15px;
 }
-/*  */
-.foot--hard{
+/* contact */
+.head-box-info-item1{
+    margin: 15px;
+}
+.hard2-title{
+    margin-bottom: 35px;
+}
+/*footer  */
+.foot-p2{
     display: flex;
     justify-content: flex-start;
+    
 }
 
 
 
 
-/*  */
-.accueil{
-    height: 100%;       /*--------ref body tte la page-----------*/
 
-    width: 100%;
-    background: url("fond.jpg");       /*-------raccourci ------------*/
 
-    background-position: center;       /*-------image reste au centre------------*/
 
-    background-repeat: no-repeat;       /*-------le fond ne se repete pas------------*/
-
-    background-size: cover;       /*-------couvre tout l'espace------------*/
-     display: flex;
-     justify-content: center;
-     align-items: center;
-
-}
-/*  */
-.accueil h1{
-    position: absolute;
-    width: 100%;
-}
-/*  clé contact et expérience*/
-.keys__box{
-    background-color: black;
-}
-.keys{
-    color: #DCB420;
-}
-/* animation contact */
-.soft__anim{
-    height: 75px;
-    font-size: 1.7em;
-    font-weight: bold;
-}
-.lettre1{
-    color:#484848;
-    _font-size: 1.2em;
-   _letter-spacing: 10px;  /*-------espace entre les lettre------------*/
-    animation: flash1 5s linear infinite; /*-------flash 1,2seconde linear infinit------------*/
-    position: relative;
-    _inset: 100px 100px 100px 160px;
-    _z-index: 4  ;
-    font-weight: bold;
-    color: black;
-    _padding-left: 15px;
-}
-@keyframes flash1{
-    0%{
-        
-        text-shadow: 0 0 7px wheat;
-    }
-    90%{
-        color:black;
-        text-shadow: none;
-    }
-}
-    .lettre1:nth-child(1){ /*------1er enfant de lettre------------*/
-    animation-delay: 0.1s;/*-------delai 1seconde ------------*/
-    } 
-    .lettre1:nth-child(2){ 
-       animation-delay: 0.2s;
-      }
-      .lettre1:nth-child(3){ 
-       animation-delay: 0.3s;
-      }
-      .lettre1:nth-child(4){ 
-       animation-delay: 0.4s;
-      }
-      .lettre1:nth-child(5){ 
-       animation-delay: 0.5s;
-      }
-      .lettre1:nth-child(6){ 
-       animation-delay: 0.6s;
-      }
-      .lettre1:nth-child(7){ 
-       animation-delay: 0.7s;
-      }
-      .lettre1:nth-child(8){ 
-       animation-delay: 0.8s;
-      }
-      .lettre1:nth-child(9){ 
-       animation-delay: 0.9s;
-      }
-      .lettre1:nth-child(10){ 
-       animation-delay: 10s;
-      }
