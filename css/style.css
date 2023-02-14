@@ -401,7 +401,7 @@ animation-delay: 25s;
     }
     90%{
         scale: 2.5;
-        color:#A2FAB6;
+        color:black;
     }
     95%{
         scale: 3;
@@ -860,7 +860,7 @@ i{
     }
 /*grande box titre et année */
 .foot__title__items{
-        padding-left: 20%;
+        padding-left: 19%;
         font-size: 1em;
         width: 80%;
         }
